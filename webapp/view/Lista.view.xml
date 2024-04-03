@@ -1,0 +1,145 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:semantic="sap.f.semantic" xmlns:fb="sap.ui.comp.filterbar" xmlns:svm="sap.ui.comp.smartvariants" xmlns:input="sap.m.Input" xmlns:core="sap.ui.core" controllerName="br.com.gestao.sapfioriappadmin354.controller.Lista" displayBlock="true" height="100%">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false" titleAreaShrinkRatio="1:1.6:1.6" showFooter="false">
+                <!-- Create -->
+            <semantic:titleCustomTextActions>
+                <Button id="_IDGenButton1" xmlns="sap.m" text="{i18n>btnNewProduct}" press="onCreateProduct" icon="sap-icon://add"/>
+            </semantic:titleCustomTextActions>
+
+                <!-- Title Heading-->
+                <semantic:titleHeading>
+                    <Title id="_IDGenTitle1" text="{i18n>headingTitle}"/>
+                </semantic:titleHeading>
+
+                <!-- Title Snapped On Mobile Content-->
+                <semantic:titleSnappedOnMobile>
+                    <Title id="_IDGenTitle2" text="{i18n>SnappedTitleProd}"/>
+                </semantic:titleSnappedOnMobile>
+
+                <!-- Title Content-->
+                <semantic:titleContent>
+                    <Image id="_IDGenImage1" src="{i18n>productsView}" tooltip="This is just a placeholder, not a real KPI control." height="2rem" width="3.5rem"/>
+                </semantic:titleContent>
+
+                <!-- TitleExpanded content-->
+                <semantic:titleSnappedContent>
+                    <Title id="_IDGenTitle3" text="{i18n>SnappedTitleProd}"/>
+                </semantic:titleSnappedContent>
+
+                <!-- Header Content -->
+                <semantic:headerContent>
+                    <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem id="idProductFilter" name="Produto ID" label="{i18n>lbProductId}" labelTooltip="{i18n>placeholderProductId}" groupTitle="{i18n>filterItemGroupProduct}" groupName="Principal" visibleInFilterBar="true">
+                                <fb:control>
+                                    <Input width="100%" placeholder="{i18n>placeholderProductId}" id="productIdInput"/>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem id="idProductNameFilter" name="Nome Produto" label="{i18n>lbProductName}" labelTooltip="{i18n>placeholderProductName}" groupTitle="{i18n>filterItemGroupSecundario}" groupName="Secundário" visibleInFilterBar="true">
+                                <fb:control>
+                                    <Input width="100%" placeholder="{i18n>placeholderProductName}" id="productNameInput"/>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem id="idCategoryFilter" name="Categoria" label="{i18n>lbCategory}" labelTooltip="{i18n>toolTipCategory}" groupTitle="{i18n>filterItemGroupCategory}" groupName="Principal" visibleInFilterBar="true">
+                                <fb:control>
+                                    <Input width="100%" placeholder="{i18n>placeholderCategory}" id="productCategory" showValueHelp="true" valueHelpRequest="onCategory"/>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                        </fb:filterGroupItems>                        
+
+                    </fb:FilterBar>
+                </semantic:headerContent>
+
+                <!-- Content -->
+                <semantic:content>
+                    <!-- Table -->
+                    <Table id="productsTable" inset="false" class="sapFSemanticPageAlignContent" width="auto" noDataText="{i18n>tbNoData}" items="{path: '/Products', parameters: {expand: 'to_cat'}}">
+
+                        <!-- Columns -->
+                        <columns>
+
+                            <Column id="logoHeader">
+                                <header>
+                                    <Text id="text0" text="{i18n>tbLogo}"/>
+                                </header>
+                            </Column>
+
+                            <Column id="idHeader">
+                                <header>
+                                    <Text id="text1" text="{i18n>tbIdProd}"/>
+                                </header>
+                            </Column>                            
+
+                            <Column id="nameHeader" width="16em">
+                                <header>
+                                    <Text id="text2" text="{i18n>tbName}"/>
+                                </header>
+                            </Column>     
+
+                            <Column id="categoryHeader" width="10em">
+                                <header>
+                                    <Text id="text3" text="{i18n>tbCategory}"/>
+                                </header>
+                            </Column>    
+
+                            <Column id="supplierIdHeader" width="8em">
+                                <header>
+                                    <Text id="text4" text="{i18n>tbSupplyId}"/>
+                                </header>
+                            </Column>   
+
+                            <Column id="unityHeaderdHeader" hAlign="Center">
+                                <header>
+                                    <Text id="text5" text="{i18n>tbUnity}"/>
+                                </header>
+                            </Column> 
+
+                            <Column id="priceHeader">
+                                <header>
+                                    <Text id="text6" text="{i18n>tbPrice}"/>
+                                </header>
+                            </Column> 
+
+                            <Column id="statusHeader" width="10em">
+                                <header>
+                                    <Text id="text7" text="{i18n>tbStatus}"/>
+                                </header>
+                            </Column> 
+
+                            <Column id="createDateHeadersHeader">
+                                <header>
+                                    <Text id="text8" text="{i18n>tbCreateDate}"/>
+                                </header>
+                            </Column> 
+
+                        </columns>
+
+                        <!-- Items -->
+                        <items>
+                            <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onSelectedItem">
+                                <cells>
+                                    <sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://product" size="3em" id="icon0"/>
+                                    <Text xmlns="sap.m" text="{Productid}" id="productIdView"/>
+                                    <ObjectIdentifier xmlns="sap.m" text="{Description}" id="productDescName" title="{Name}"/>
+                                    <Text xmlns="sap.m" id="text18" text="{to_cat/Description}"/>
+                                    <Text xmlns="sap.m" id="text19" text="{Supplierid}"/>
+                                    <Text xmlns="sap.m" text="{Measureunit}" id="text20"/>
+
+                                    <ObjectNumber xmlns="sap.m" unit="{Currencycode}" id="number0" number="{ parts:[{path:'Price'}, {path:'Currencycode'}], type:'sap.ui.model.type.Currency', formatOptions: {showMeasure: false}}" state="Information"/>
+
+                                    <ObjectStatus xmlns="sap.m" text="{ path:'Status', formatter: '.objFormat.productStatus'}" id="statusProd" state="{ path:'Status', formatter: '.objFormat.changeStatus'}" icon="{ path:'Status', formatter: '.objFormat.changeIcon'}"/>
+
+                                    <Text xmlns="sap.m" text="{ path:'Createdat', formatter: '.objFormat.dateFormat'}" id="text23"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </semantic:content>
+            </semantic:SemanticPage>
+        </content>
+    </Page>
+</mvc:View>

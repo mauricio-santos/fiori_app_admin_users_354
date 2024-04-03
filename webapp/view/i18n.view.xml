@@ -1,0 +1,42 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="br.com.gestao.sapfioriappadmin354.controller.i18n" displayBlock="true">
+    
+    <!-- PÁGINA PRINCIPAL --><Page id="page" title="{i18n>title}">
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <content>
+
+        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="form0">
+
+            <sap.ui.layout.form:content>
+                <sap.ui.core:Title text="{i18n>titleClient}" id="title0"/>
+
+                <Label text="{i18n>lblClientName}" id="label0" required="true"/>
+                <Input width="100%" id="client" placeholder="{i18n>placeholderClient}"/>
+
+                <Label text="{i18n>lblClientAdress}" id="label1"/>
+                <Input width="100%" id="adress" placeholder="{i18n>placeholderClientAdress}"/>
+                
+                <Label text="{i18n>lblClientCity}" id="label2" required="true"/>
+                <Input width="100%" id="city" placeholder="{i18n>palceholderClientCity}"/>
+
+                <Label text="{i18n>lblClientState}" id="label3" required="true"/>
+                <Input width="100%" id="state" placeholder="{i18n>palceholderClientState}"/>
+            </sap.ui.layout.form:content>
+        </sap.ui.layout.form:SimpleForm>
+
+        <Button xmlns="sap.m" text="{i18n>btnClientSend}" press="createClient" id="button0" type="Emphasized" icon="sap-icon://create-form"/>
+
+        </content>
+    <headerContent>
+        <Select xmlns="sap.m" id="languageSelect" change="changeLanguage">
+            <items>
+                <core:Item xmlns:core="sap.ui.core" id="item0" text="Portuguese" key="pt_BR"/>
+                <core:Item xmlns:core="sap.ui.core" id="item1" text="English" key="en_US"/>
+                <core:Item xmlns:core="sap.ui.core" id="item2" text="French" key="fr_FR"/>
+                <core:Item xmlns:core="sap.ui.core" id="item3" text="German" key="de_DE"/>
+            </items>
+            
+        </Select>
+    </headerContent>
+    </Page>
+</mvc:View>

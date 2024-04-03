@@ -1,0 +1,66 @@
+[
+    {
+        "Category": "COMP",
+        "Description": "Computação",
+        "__metadata": {
+            "uri": "/Categories('comp')",
+            "type": "cds_zsd_production_354.CategoriesType"
+        }
+    },
+    {
+        "Category": "CELU",
+        "Description": "Celulares",
+        "__metadata": {
+            "uri": "/Categories('celu')",
+            "type": "cds_zsd_production_354.CategoriesType"
+        }
+    },
+    {
+        "Category": "ELET",
+        "Description": "Eletrodomésticos",
+        "__metadata": {
+            "uri": "/Categories('elet')",
+            "type": "cds_zsd_production_354.CategoriesType"
+        }
+    },
+    {
+        "Category": "CALC",
+        "Description": "Calçados",
+        "__metadata": {
+            "uri": "/Categories('calc')",
+            "type": "cds_zsd_production_354.CategoriesType"
+        }
+    },
+    {
+        "Category": "FOTO",
+        "Description": "Foto",
+        "__metadata": {
+            "uri": "/Categories('foto')",
+            "type": "cds_zsd_production_354.CategoriesType"
+        }
+    },
+    {
+        "Category": "MODA",
+        "Description": "Moda",
+        "__metadata": {
+            "uri": "/Categories('moda')",
+            "type": "cds_zsd_production_354.CategoriesType"
+        }
+    },
+    {
+        "Category": "AUDI",
+        "Description": "Áudio",
+        "__metadata": {
+            "uri": "/Categories('audio')",
+            "type": "cds_zsd_production_354.CategoriesType"
+        }
+    },
+    {
+        "Category": "ESPO",
+        "Description": "Esporte",
+        "__metadata": {
+            "uri": "/Categories('esporte')",
+            "type": "cds_zsd_production_354.CategoriesType"
+        }
+    }
+]

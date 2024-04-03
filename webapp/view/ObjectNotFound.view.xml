@@ -1,0 +1,21 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	height="100%">
+	<l:ResponsiveSplitter id="_IDGenResponsiveSplitter1">
+		<l:PaneContainer id="_IDGenPaneContainer1" orientation="Vertical">
+			<l:SplitPane id="_IDGenSplitPane1">
+				<IllustratedMessage id="_IDGenIllustratedMessage1" 
+                    enableVerticalResponsiveness="true" 
+                    illustrationType="sapIllus-NoEntries"
+                    illustrationSize="Auto"
+				    enableDefaultTitleAndDescription="true"
+				    title="{i18n>objNFTitle}"
+				    description="{i18n>objNFDescription}"
+				>
+				</IllustratedMessage>
+			</l:SplitPane>
+		</l:PaneContainer>
+	</l:ResponsiveSplitter>
+</mvc:View>

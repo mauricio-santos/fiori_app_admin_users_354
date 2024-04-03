@@ -1,0 +1,97 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="br.com.gestao.sapfioriappadmin354.controller.DataBinding" displayBlock="true">
+    
+    <!-- PÁGINA PRINCIPAL -->
+    <Page id="page" title="{i18n>title}">
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <content>
+            <!-- PANEL 1 -->
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0">
+                
+                <!-- HEADER 1 -->
+                <headerToolbar>
+                    <Toolbar id="toolbar0">
+                        <Title text="Model OData" id="headerTitle0"/>
+                        <ToolbarSpacer id="toolbarSpace0"/>
+                        <Button icon="sap-icon://settings" id="btnConfigHeader0"/>
+                    </Toolbar>
+                </headerToolbar>
+
+                <!-- CONTENT 1 -->
+                <content>
+                    <List noDataText="Nenhum produto foi encontrado" id="list0" items="{/Products}">
+
+                        <!-- INFO TOOLBAR -->
+                        <infoToolbar>
+                            <Toolbar width="100%" id="toolbarInfo1">
+                                <content>
+                                    <Text xmlns="sap.m" text="Detalhes" id="text1"/>
+                                </content>
+                            </Toolbar>
+                        </infoToolbar>
+
+                        <!-- ITEMS -->
+                        <items>
+                            <StandardListItem type="Navigation" title="{Productid}" icon="sap-icon://picture" id="item0" description="{Name}"/>
+                        </items>
+                    </List>
+                </content>
+            </Panel>
+
+
+            <!-- PANEL 2 - Binding Products.json-->
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel1">
+                
+                <!-- HEADER 1 -->
+                <headerToolbar>
+                    <Toolbar id="toolbar1">
+                        <Title text="Model Via Arquivo JSON" id="headerTitle1"/>
+                        <ToolbarSpacer id="toolbarSpace1"/>
+                        <Button icon="sap-icon://settings" id="btnConfigHeader1"/>
+                    </Toolbar>
+                </headerToolbar>
+
+                <!-- CONTENT 1 -->
+                <content>
+                    <!-- <List noDataText="Nenhum produto foi encontrado" id="list1" items="{Model_Produtos_JSON>/Products}"> -->
+
+                        <!-- ITEMS -->
+                        <!-- <items> -->
+                            <!-- <StandardListItem type="Navigation" title="{Model_Produtos_JSON>ProductName}" icon="sap-icon://picture" id="item1" description="{Model_Produtos_JSON>Description}"/> -->
+                        <!-- </items> -->
+                    <!-- </List> -->
+                </content>
+            </Panel>
+
+            <!-- PANEL 3 - Buinding Regions.json-->
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="regionsPanel">
+                <headerToolbar>
+                    <Toolbar id="toolbar1_1708174951831">
+                        <Title id="_IDGenTitle1" text="Header"/>
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                        <Button id="_IDGenButton1" icon="sap-icon://settings"/>
+                        </Toolbar>
+                    
+                </headerToolbar>
+                <content>
+                    <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="formRegions">
+                        <sap.ui.layout.form:content>
+                            <sap.ui.core:Title text="Realizando Binding Element Regions.json" id="title1"/>
+
+                            <Label text="Nome da Região" id="label0"/>
+                            <Input width="100%" id="input0" autocomplete="false" value="{regionsJSON>name}"/>
+                            <Label text="Nome da Empresa" id="label1"/>
+                            <Input width="100%" id="input1" value="{regionsJSON>companies/2/name}"/>
+                            <Label text="Cidade / País" id="label2"/>
+                            <Input width="100%" id="input2" value="{regionsJSON>companies/2/city} - {regionsJSON>companies/2/county}"/>
+
+                            <Label width="100%" id="labelBtn" text=""/>
+                            <Button xmlns="sap.m" text="Buinding Element" id="button1" press="getRegion"/>
+                        </sap.ui.layout.form:content>
+                    </sap.ui.layout.form:SimpleForm>
+                    </content>
+                </Panel>
+            
+        </content>
+    </Page>
+</mvc:View>

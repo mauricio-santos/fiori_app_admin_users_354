@@ -1,0 +1,312 @@
+[
+    {
+        "Productid": "1001",
+        "Name": "Notebook Avançado",
+        "Description": "Notebook de alta performance com recursos avançados.",
+        "Category": "COMP",
+        "Supplierid": "001",
+        "Measureunit": "Unidade",
+        "Weightunit": "kg",
+        "Currencycode": "BRL",
+        "Dimunit": "cm",
+        "Createdat": "2023-01-15",
+        "Changedat": "2023-02-05",
+        "Status": "P",
+        "Usercreate": "Admin123",
+        "Userupdate": "Admin123",
+        "Suppliername": "Tech Solutions Inc.",
+        "Price": "3500.00",
+        "Weightmeasure": "2.0",
+        "Width": "36.0",
+        "Depth": "24.5",
+        "Height": "2.5",
+        "__metadata": {
+            "uri": "/Products('1001')",
+            "type": "cds_zsd_production_354.ProductsType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Products('1001')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "1002",
+        "Name": "Smartphone TopZ",
+        "Description": "Smartphone de última geração com recursos avançados.",
+        "Category": "CELU",
+        "Supplierid": "002",
+        "Measureunit": "Unidade",
+        "Weightunit": "g",
+        "Currencycode": "BRL",
+        "Dimunit": "cm",
+        "Createdat": "2023-02-10",
+        "Changedat": "2023-03-02",
+        "Status": "F",
+        "Usercreate": "Admin123",
+        "Userupdate": "Admin123",
+        "Suppliername": "MobileTech Ltda.",
+        "Price": "2499.99",
+        "Weightmeasure": "180.0",
+        "Width": "7.0",
+        "Depth": "0.8",
+        "Height": "15.0",
+        "__metadata": {
+            "uri": "/Products('1002')",
+            "type": "cds_zsd_production_354.ProductsType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Products('1002')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "1003",
+        "Name": "Liquidificador MegaPower",
+        "Description": "Liquidificador de alta potência para preparo de bebidas.",
+        "Category": "ELET",
+        "Supplierid": "003",
+        "Measureunit": "Unidade",
+        "Weightunit": "kg",
+        "Currencycode": "BRL",
+        "Dimunit": "cm",
+        "Createdat": "2023-03-20",
+        "Changedat": "2023-04-05",
+        "Status": "E",
+        "Usercreate": "Admin456",
+        "Userupdate": "Admin456",
+        "Suppliername": "EletroGadget S.A.",
+        "Price": "199.99",
+        "Weightmeasure": "1.5",
+        "Width": "20.0",
+        "Depth": "18.0",
+        "Height": "35.0",
+        "__metadata": {
+            "uri": "/Products('1003')",
+            "type": "cds_zsd_production_354.ProductsType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Products('1003')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "1004",
+        "Name": "Tênis Esportivo Elite",
+        "Description": "Tênis de alta performance para prática esportiva.",
+        "Category": "CALC",
+        "Supplierid": "004",
+        "Measureunit": "Par",
+        "Weightunit": "g",
+        "Currencycode": "BRL",
+        "Dimunit": "cm",
+        "Createdat": "2023-04-15",
+        "Changedat": "2023-05-01",
+        "Status": "P",
+        "Usercreate": "Admin789",
+        "Userupdate": "Admin789",
+        "Suppliername": "Sports Gear Ltda.",
+        "Price": "359.99",
+        "Weightmeasure": "350.0",
+        "Width": "10.0",
+        "Depth": "28.0",
+        "Height": "15.0",
+        "__metadata": {
+            "uri": "/Products('1004')",
+            "type": "cds_zsd_production_354.ProductsType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Products('1004')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "1005",
+        "Name": "Câmera Fotográfica Profissional",
+        "Description": "Câmera digital profissional para fotógrafos experientes.",
+        "Category": "FOTO",
+        "Supplierid": "005",
+        "Measureunit": "Unidade",
+        "Weightunit": "g",
+        "Currencycode": "BRL",
+        "Dimunit": "cm",
+        "Createdat": "2023-05-10",
+        "Changedat": "2023-06-01",
+        "Status": "E",
+        "Usercreate": "Admin123",
+        "Userupdate": "Admin123",
+        "Suppliername": "FotoTech Corp.",
+        "Price": "4500.00",
+        "Weightmeasure": "800.0",
+        "Width": "15.0",
+        "Depth": "10.0",
+        "Height": "12.0",
+        "__metadata": {
+            "uri": "/Products('1005')",
+            "type": "cds_zsd_production_354.ProductsType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Products('1005')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "1006",
+        "Name": "Panela Elétrica Multifuncional",
+        "Description": "Panela elétrica versátil para cozinha moderna.",
+        "Category": "ELEC",
+        "Supplierid": "006",
+        "Measureunit": "Unidade",
+        "Weightunit": "kg",
+        "Currencycode": "BRL",
+        "Dimunit": "cm",
+        "Createdat": "2023-06-20",
+        "Changedat": "2023-07-05",
+        "Status": "F",
+        "Usercreate": "Admin456",
+        "Userupdate": "Admin456",
+        "Suppliername": "CozinhaPlus Ltda.",
+        "Price": "625.99",
+        "Weightmeasure": "2.8",
+        "Width": "25.0",
+        "Depth": "25.0",
+        "Height": "18.0",
+        "__metadata": {
+            "uri": "/Products('1006')",
+            "type": "cds_zsd_production_354.ProductsType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Products('1006')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "1007",
+        "Name": "Camisa Polo Casual",
+        "Description": "Camisa polo confortável e elegante para uso casual.",
+        "Category": "MODA",
+        "Supplierid": "007",
+        "Measureunit": "Unidade",
+        "Weightunit": "g",
+        "Currencycode": "BRL",
+        "Dimunit": "cm",
+        "Createdat": "2023-07-10",
+        "Changedat": "2023-08-01",
+        "Status": "E",
+        "Usercreate": "Admin789",
+        "Userupdate": "Admin789",
+        "Suppliername": "FashionStyle S.A.",
+        "Price": "79.99",
+        "Weightmeasure": "300.0",
+        "Width": "20.0",
+        "Depth": "15.0",
+        "Height": "5.0",
+        "__metadata": {
+            "uri": "/Products('1007')",
+            "type": "cds_zsd_production_354.ProductsType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Products('1007')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "1008",
+        "Name": "Fone de Ouvido Bluetooth",
+        "Description": "Fone de ouvido sem fio com tecnologia Bluetooth.",
+        "Category": "AUDI",
+        "Supplierid": "008",
+        "Measureunit": "Unidade",
+        "Weightunit": "g",
+        "Currencycode": "BRL",
+        "Dimunit": "cm",
+        "Createdat": "2023-08-15",
+        "Changedat": "2023-09-01",
+        "Status": "E",
+        "Usercreate": "Admin123",
+        "Userupdate": "Admin123",
+        "Suppliername": "AudioTech Ltda.",
+        "Price": "149.99",
+        "Weightmeasure": "150.0",
+        "Width": "18.0",
+        "Depth": "6.0",
+        "Height": "20.0",
+        "__metadata": {
+            "uri": "/Products('1008')",
+            "type": "cds_zsd_production_354.ProductsType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Products('1008')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "1009",
+        "Name": "Máquina de Café Automática",
+        "Description": "Máquina de café totalmente automática para amantes do café.",
+        "Category": "ELEC",
+        "Supplierid": "009",
+        "Measureunit": "Unidade",
+        "Weightunit": "kg",
+        "Currencycode": "BRL",
+        "Dimunit": "cm",
+        "Createdat": "2023-09-20",
+        "Changedat": "2023-10-05",
+        "Status": "F",
+        "Usercreate": "Admin456",
+        "Userupdate": "Admin456",
+        "Suppliername": "CaféDelícia Ltda.",
+        "Price": "899.99",
+        "Weightmeasure": "5.0",
+        "Width": "30.0",
+        "Depth": "25.0",
+        "Height": "40.0",
+        "__metadata": {
+            "uri": "/Products('1009')",
+            "type": "cds_zsd_production_354.ProductsType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Products('1009')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "1010",
+        "Name": "Mochila Esportiva Resistente",
+        "Description": "Mochila durável e prática para atividades esportivas.",
+        "Category": "ESPO",
+        "Supplierid": "010",
+        "Measureunit": "Unidade",
+        "Weightunit": "kg",
+        "Currencycode": "BRL",
+        "Dimunit": "cm",
+        "Createdat": "2023-10-15",
+        "Changedat": "2023-11-01",
+        "Status": "F",
+        "Usercreate": "Admin789",
+        "Userupdate": "Admin789",
+        "Suppliername": "OutdoorGear Ltda.",
+        "Price": "129.99",
+        "Weightmeasure": "1.2",
+        "Width": "28.0",
+        "Depth": "15.0",
+        "Height": "40.0",
+        "__metadata": {
+            "uri": "/Products('1010')",
+            "type": "cds_zsd_production_354.ProductsType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Products('1010')/to_cat"
+            }
+        }
+    }
+]

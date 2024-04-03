@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+    	<SelectDialog id="_IDGenSelectDialog1"
+		title="{i18n>titleSHCategories}"
+        contentHeight="50%"
+		search="onValueHelpSearch"
+		searchPlaceholder="Search Products"
+		confirm="onValueHelpClose"
+		cancel="onValueHelpClose"
+		items="{/Categories}">
+
+		    <StandardListItem id="_IDGenStandardListItem1"
+                title="{Category}"
+                description="{Description}"
+                icon="sap-icon://course-book"
+                iconDensityAware="false"
+                iconInset="false"/>
+
+	</SelectDialog>
+	    
+</core:FragmentDefinition>

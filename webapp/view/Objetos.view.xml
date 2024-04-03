@@ -1,0 +1,70 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="br.com.gestao.sapfioriappadmin354.controller.Objetos" displayBlock="true">
+    
+    <!-- PÁGINA PRINCIPAL -->
+    <Page id="page" title="{i18n>title}">
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <content>
+            <!-- PANEL 1 -->
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0">
+                
+                <!-- HEADER 1 -->
+                <headerToolbar>
+                    <Toolbar id="toolbar0">
+                        <Title text="Título Header 1" id="headerTitle0"/>
+                        <ToolbarSpacer id="toolbarSpace0"/>
+                        <Button icon="sap-icon://settings" id="btnConfigHeader0"/>
+                    </Toolbar>
+                </headerToolbar>
+
+                <!-- CONTENT 1 -->
+                <content>
+                    <List noDataText="Drop list items here" id="list0">
+                        <items>
+                            <StandardListItem type="Navigation" title="List Item 1" description="Description text 1" icon="sap-icon://picture" id="item0"/>
+                            <StandardListItem type="Navigation" title="List Item 2" description="Description text 2" icon="sap-icon://picture" id="item1"/>
+                            <StandardListItem type="Navigation" title="List Item 3" description="Description text 2" icon="sap-icon://picture" id="item2"/>
+                            <StandardListItem type="Navigation" title="List Item 4" description="Description text 4" icon="sap-icon://picture" id="item3"/>
+                            <StandardListItem type="Navigation" title="List Item 5" description="Description text 5" icon="sap-icon://picture" id="item4"/>
+                            <StandardListItem type="Navigation" title="List Item 6" description="Description text 6" icon="sap-icon://picture" id="item5"/>
+                            <StandardListItem type="Navigation" title="List Item 7" description="Description text 7" icon="sap-icon://picture" id="item6"/>
+                        </items>
+
+                        <!-- INFO TOOLBAR 1 -->
+                        <infoToolbar>
+                            <Toolbar width="100%" id="toolbarInfo1">
+                                <content>
+                                    <Text xmlns="sap.m" text="Informação adicional LIST" id="text1"/>
+                                </content>
+                            </Toolbar>
+                        </infoToolbar>
+                    </List>
+
+                    <!-- BUTTON PANEL 1 -->
+                    <Button xmlns="sap.m" text="Ler Texto Header" press="onClickGet" id="button2" activeIcon="sap-icon://customize" icon="sap-icon://play"/>
+                    <Button xmlns="sap.m" text="Alterar Texto Header" press="onClickSet" id="button1" activeIcon="sap-icon://customize" icon="sap-icon://play"/>
+                </content>
+            </Panel>
+
+            <!-- PANEL 2 -->
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel1">
+                <!-- HEADER 2 -->
+                <headerToolbar>
+                    <Toolbar id="toolbar2">
+                        <Title text="Kontact" id="headerTitle2"/>
+                        <ToolbarSpacer id="toolbarSpace2"/>
+                        <Button icon="sap-icon://settings" id="btnConfigHeader2"/>
+                    </Toolbar>
+                </headerToolbar>
+
+                <!-- CONTENT 2 -->
+                <content>
+                    <Text text="Panel Content" id="text2"/>
+                </content>
+            </Panel>
+
+            <!-- BUTTON CreateForm -->
+            <Button xmlns="sap.m" text="Criar novo Formulário" press="createForm" id="button0" icon="sap-icon://accidental-leave"/>
+        </content>
+    </Page>
+</mvc:View>
