@@ -62,12 +62,6 @@
                         <!-- Columns -->
                         <columns>
 
-                            <Column id="logoHeader" width="7em">
-                                <header>
-                                    <Text id="text0" text="{i18n>tbLogo}"/>
-                                </header>
-                            </Column>
-
                             <Column id="idHeader" width="12em">
                                 <header>
                                     <Text id="text1" text="{i18n>tbIdUser}"/>
@@ -98,7 +92,7 @@
                         <items>
                             <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onSelectedUser">
                                 <cells>
-                                    <sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://product" size="3em" id="icon0"/>
+                                    <!-- <sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://product" size="3em" id="icon0"/> -->
                                     <Text xmlns="sap.m" text="{Userid}" id="userId"/>
                                     <Text xmlns="sap.m" text="{Firstname} {Lastname}" id="idName"/>
                                     <Text xmlns="sap.m" text="{Email}" id="userEmail"/>
