@@ -2,14 +2,14 @@ sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/format/NumberFormat",
-    "br/com/gestao/sapfioriappadmin354/util/Formatter",
+    "br/com/gestao/sapfioriappusers354/util/Formatter",
     "sap/ui/core/Fragment",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/odata/ODataModel",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
     "sap/m/MessageToast",
-    "br/com/gestao/sapfioriappadmin354/util/Validator",
+    "br/com/gestao/sapfioriappusers354/util/Validator",
     "sap/ui/core/ValueState",
     "sap/m/MessageBox",
     "sap/m/BusyDialog",
@@ -17,7 +17,7 @@ sap.ui.define(
   function (BaseController, NumberFormat, Formatter, Fragment, JSONModel, ODataModel, Filter, FilterOperator, MessageToast, Validator, ValueState, MessageBox, BusyDialog) {
     "use strict";
 
-    return BaseController.extend("br.com.gestao.sapfioriappadmin354.controller.Detalhes", {
+    return BaseController.extend("br.com.gestao.sapfioriappusers354.controller.Detalhes", {
 
       //Usando funções do arquivo Formatter.js
       objFormat: Formatter,
@@ -71,7 +71,7 @@ sap.ui.define(
         if (!oFormFragment) {
           oFormFragment = Fragment.load({
             id: oView.getId(),
-            name: "br.com.gestao.sapfioriappadmin354.frags." + fragmentName,
+            name: "br.com.gestao.sapfioriappusers354.frags." + fragmentName,
             controller: this
           });
 
@@ -245,7 +245,7 @@ sap.ui.define(
           this._CategorySearchHelp = Fragment.load({
             id: oView.getId(),
             //Namespace do fragmento
-            name: "br.com.gestao.sapfioriappadmin354.frags.SH_Categories",
+            name: "br.com.gestao.sapfioriappusers354.frags.SH_Categories",
             controller: this
           }).then(function (oDialog) {
             //oDialog corresponde ao fragment (_CategorySearchHelp) recém criado

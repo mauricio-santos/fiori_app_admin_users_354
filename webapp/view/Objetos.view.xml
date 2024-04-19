@@ -1,4 +1,4 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="br.com.gestao.sapfioriappadmin354.controller.Objetos" displayBlock="true">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="br.com.gestao.sapfioriappusers354.controller.Objetos" displayBlock="true">
     
     <!-- PÁGINA PRINCIPAL -->
     <Page id="page" title="{i18n>title}">

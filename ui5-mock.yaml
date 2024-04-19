@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: br.com.gestao.sapfioriappadmin354
+  name: br.com.gestao.sapfioriappusers354
 type: application
 server:
   customMiddleware:
@@ -31,7 +31,7 @@ server:
       configuration:
         mountPath: /
         services:
-          - urlPath: /sap/opu/odata/sap/ZSB_PRODUCTION_354
+          - urlPath: /sap/opu/odata/sap/ZSB_USERS_354
             metadataPath: ./webapp/localService/metadata.xml
             mockdataPath: ./webapp/localService/data
             generateMockData: true

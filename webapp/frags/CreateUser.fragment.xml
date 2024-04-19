@@ -1,0 +1,145 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="dialogModal"
+        title="{i18n>titleModal}"
+        resizable="false"
+        draggable="false"
+        contentWidth="37%"
+    >
+        <content>
+            <!-- Simple Form Basic Information -->
+            <sap.ui.layout.form:SimpleForm
+                xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                maxContainerCols="2"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanL="4"
+                labelSpanM="4"
+                emptySpanL="1"
+                emptySpanM="1"
+                columnsL="2"
+                columnsM="2"
+                id="formCreate"
+            >
+                <sap.ui.layout.form:title>
+                    <core:Title
+                        text="{i18n>sfModalTitle}"
+                        id="title6"
+                    />
+                </sap.ui.layout.form:title>
+
+                <sap.ui.layout.form:content>
+                    <!-- Propriedade Name -->
+                    <!-- <Label id="lblName" text="{/#ProductsType/Name/@sap:label}" required="true"/> Utilizando propiedades do metadata -->
+                    <Label
+                        id="lblId"
+                        text="{i18n>sfId}"
+                        required="true"
+                    />
+                    <Input
+                        id="inputId"
+                        maxLength="4"
+                        valueStateText="{i18n>sfIdStateText}"
+                        value="{
+                            path: 'MDL_User>/Userid', 
+                            type: 'sap.ui.model.type.String',
+                            constraints:{
+                                search: '^[A-Za-z0-9áàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$', minLength: 1, maxLength: 4
+                            }
+                        }"
+                    />
+
+                    <!-- Propriedade Nome -->
+                    <Label
+                        id="lblFirstName"
+                        text="{i18n>sfFirstName}"
+                        required="true"
+                    />
+                    <Input
+                        id="inputFirstName"
+                        maxLength="40"
+                        valueStateText="{i18n>sfNomeStateText}"
+                        value="{path: 'MDL_User>/Firstname', 
+                            type: 'sap.ui.model.type.String',
+                            constraints:{
+                                search: '^[A-Za-z0-9áàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$', minLength: 3, maxLength: 40
+                            }
+                        }"
+                    />
+
+                    <!-- Propriedade Sobrenome -->
+                    <Label
+                        id="lblLastName"
+                        text="{i18n>sfLastName}"
+                        required="true"
+                    />
+                    <Input
+                        id="inputLastName"
+                        maxLength="40"
+                        valueStateText="{i18n>sfNomeStateText}"
+                        value="{path: 'MDL_User>/Lastname', 
+                            type: 'sap.ui.model.type.String',
+                            constraints:{
+                                search: '^[A-Za-z0-9áàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$', minLength: 3, maxLength: 40
+                            }}"
+                    />
+
+                    <!-- Propriedade Email -->
+                    <Label
+                        id="lblemail"
+                        text="{i18n>sfEmail}"
+                        required="true"
+                    />
+                    <Input
+                        id="_IDGenInput111"
+                        width="65%"
+                        value="{
+                            path: 'MDL_User>/Email',  
+                            type : 'sap.ui.model.type.String', 
+                            constraints : {
+                                search: '^\\w+[\\w-+\\.]*\\@\\w+([-\\.]\\w+)*\\.[a-zA-Z]{2,}$', minLength: 1 
+                                }
+                        }"
+                    />
+
+                    <!-- Propriedade Telefone -->
+                    <Label
+                        id="lblPhone"
+                        text="{i18n>sfPhone}"
+                        required="true"
+                    />
+                    <MaskInput
+                        id="_IDGenMaskInput1"
+                        mask="(99) 99999-9999"
+                        width="65%"
+                        value="{path: 'MDL_User>/Fone',  type : 'sap.ui.model.type.String', constraints : {minLength: 1 }}"
+                        placeholderSymbol="_"
+                        placeholder="{i18n>sfPlaceholderFone}"
+                        showClearIcon="true"
+                    />
+                </sap.ui.layout.form:content>
+            </sap.ui.layout.form:SimpleForm>
+        </content>
+
+        <buttons>
+            <Button
+                xmlns="sap.m"
+                text="{i18n>btnCreate}"
+                id="button"
+                icon="sap-icon://add"
+                type="Accept"
+                press="onValidation"
+            />
+            <Button
+                xmlns="sap.m"
+                text="{i18n>btnCancell}"
+                id="button01"
+                type="Reject"
+                press="dialogClose"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

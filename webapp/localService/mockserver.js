@@ -7,7 +7,7 @@ sap.ui.define([
     "use strict";
 
     var oMockServer,
-        _sAppPath = "br/com/gestao/sapfioriappadmin354/", //Namespace da aplicação. Econtra em manifest(ID)
+        _sAppPath = "br/com/gestao/sapfioriappusers354/", //Namespace da aplicação. Econtra em manifest(ID)
         _sJsonFilesPath = _sAppPath + "localService/mockdata";
 
     var oMockServerInterface = {

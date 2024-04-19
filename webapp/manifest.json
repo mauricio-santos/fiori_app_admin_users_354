@@ -1,7 +1,7 @@
 {
     "_version": "1.59.0",
     "sap.app": {
-        "id": "br.com.gestao.sapfioriappadmin354",
+        "id": "br.com.gestao.sapfioriappusers354",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -17,7 +17,7 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/sap/opu/odata/sap/ZSB_PRODUCTION_354/",
+                "uri": "/sap/opu/odata/sap/ZSB_USERS_354/",
                 "type": "OData",
                 "settings": {
                     "annotations": [
@@ -28,7 +28,7 @@
                 }
             },
             "mainService_Annotation": {
-                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZSB_PRODUCTION_354_VAN',Version='0001')/$value/",
+                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZSB_USERS_354_VAN',Version='0001')/$value/",
                 "type": "ODataAnnotation",
                 "settings": {
                     "localUri": "localService/mainService_Annotation.xml"
@@ -76,7 +76,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "br.com.gestao.sapfioriappadmin354.i18n.i18n"
+                    "bundleName": "br.com.gestao.sapfioriappusers354.i18n.i18n"
                 }
             },
             "": {
@@ -97,7 +97,7 @@
                 "routerClass": "sap.m.routing.Router",
                 "viewType": "XML",
                 "async": true,
-                "viewPath": "br.com.gestao.sapfioriappadmin354.view",
+                "viewPath": "br.com.gestao.sapfioriappusers354.view",
                 "controlAggregation": "pages",
                 "controlId": "app",
                 "clearControlAggregation": false,
@@ -115,7 +115,7 @@
                 },
                 {
                     "name": "RouteDetalhes",
-                    "pattern": "detalhes/{productId}",
+                    "pattern": "detalhes/{userId}",
                     "target": [
                         "TargetDetalhes"
                     ]
@@ -151,7 +151,7 @@
             }
         },
         "rootView": {
-            "viewName": "br.com.gestao.sapfioriappadmin354.view.App",
+            "viewName": "br.com.gestao.sapfioriappusers354.view.App",
             "type": "XML",
             "async": true,
             "id": "App"

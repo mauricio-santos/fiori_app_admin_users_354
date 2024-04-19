@@ -1,10 +1,10 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:semantic="sap.f.semantic" xmlns:fb="sap.ui.comp.filterbar" xmlns:svm="sap.ui.comp.smartvariants" xmlns:input="sap.m.Input" xmlns:core="sap.ui.core" controllerName="br.com.gestao.sapfioriappadmin354.controller.Lista" displayBlock="true" height="100%">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:semantic="sap.f.semantic" xmlns:fb="sap.ui.comp.filterbar" xmlns:svm="sap.ui.comp.smartvariants" xmlns:input="sap.m.Input" xmlns:core="sap.ui.core" controllerName="br.com.gestao.sapfioriappusers354.controller.Lista" displayBlock="true" height="100%">
     <Page id="page" title="{i18n>title}">
         <content>
             <semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false" titleAreaShrinkRatio="1:1.6:1.6" showFooter="false">
                 <!-- Create -->
             <semantic:titleCustomTextActions>
-                <Button id="_IDGenButton1" xmlns="sap.m" text="{i18n>btnNewProduct}" press="onCreateProduct" icon="sap-icon://add"/>
+                <Button id="_IDGenButton1" xmlns="sap.m" text="{i18n>btnNewUser}" press="onCreateUser" icon="sap-icon://add"/>
             </semantic:titleCustomTextActions>
 
                 <!-- Title Heading-->
@@ -14,38 +14,38 @@
 
                 <!-- Title Snapped On Mobile Content-->
                 <semantic:titleSnappedOnMobile>
-                    <Title id="_IDGenTitle2" text="{i18n>SnappedTitleProd}"/>
+                    <Title id="_IDGenTitle2" text="{i18n>SnappedTitleUser}"/>
                 </semantic:titleSnappedOnMobile>
 
                 <!-- Title Content-->
                 <semantic:titleContent>
-                    <Image id="_IDGenImage1" src="{i18n>productsView}" tooltip="This is just a placeholder, not a real KPI control." height="2rem" width="3.5rem"/>
+                    <Image id="_IDGenImage1" src="{i18n>UserIcon}" tooltip="This is just a placeholder, not a real KPI control." height="2rem" width="3.5rem"/>
                 </semantic:titleContent>
 
                 <!-- TitleExpanded content-->
                 <semantic:titleSnappedContent>
-                    <Title id="_IDGenTitle3" text="{i18n>SnappedTitleProd}"/>
+                    <Title id="_IDGenTitle3" text="{i18n>SnappedTitleUser}"/>
                 </semantic:titleSnappedContent>
 
                 <!-- Header Content -->
                 <semantic:headerContent>
                     <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
                         <fb:filterGroupItems>
-                            <fb:FilterGroupItem id="idProductFilter" name="Produto ID" label="{i18n>lbProductId}" labelTooltip="{i18n>placeholderProductId}" groupTitle="{i18n>filterItemGroupProduct}" groupName="Principal" visibleInFilterBar="true">
+                            <fb:FilterGroupItem id="idProductFilter" name="Usuário ID" label="{i18n>lbUserId}" labelTooltip="{i18n>placeholderUserId}" groupTitle="{i18n>filterItemGroupUser}" groupName="Principal" visibleInFilterBar="true">
                                 <fb:control>
-                                    <Input width="100%" placeholder="{i18n>placeholderProductId}" id="productIdInput"/>
+                                    <Input width="100%" placeholder="{i18n>placeholderUserId}" id="userIdInput"/>
                                 </fb:control>
                             </fb:FilterGroupItem>
 
-                            <fb:FilterGroupItem id="idProductNameFilter" name="Nome Produto" label="{i18n>lbProductName}" labelTooltip="{i18n>placeholderProductName}" groupTitle="{i18n>filterItemGroupSecundario}" groupName="Secundário" visibleInFilterBar="true">
+                            <fb:FilterGroupItem id="idFirstName" name="Primeiro Nome" label="{i18n>lbUserName}" labelTooltip="{i18n>placeholderUserName}" groupTitle="{i18n>filterItemGroupSecundario}" groupName="Secundário" visibleInFilterBar="true">
                                 <fb:control>
-                                    <Input width="100%" placeholder="{i18n>placeholderProductName}" id="productNameInput"/>
+                                    <Input width="100%" placeholder="{i18n>placeholderUserName}" id="userNameInput"/>
                                 </fb:control>
                             </fb:FilterGroupItem>
 
-                            <fb:FilterGroupItem id="idCategoryFilter" name="Categoria" label="{i18n>lbCategory}" labelTooltip="{i18n>toolTipCategory}" groupTitle="{i18n>filterItemGroupCategory}" groupName="Principal" visibleInFilterBar="true">
+                            <fb:FilterGroupItem id="idUserEmail" name="Email" label="{i18n>lbEmail}" labelTooltip="{i18n>toolTipEmail}" groupTitle="{i18n>filterItemGroupUser}" groupName="Principal" visibleInFilterBar="true">
                                 <fb:control>
-                                    <Input width="100%" placeholder="{i18n>placeholderCategory}" id="productCategory" showValueHelp="true" valueHelpRequest="onCategory"/>
+                                    <Input width="100%" placeholder="{i18n>placeholderEmail}" id="emailInput"/>
                                 </fb:control>
                             </fb:FilterGroupItem>
 
@@ -57,83 +57,52 @@
                 <!-- Content -->
                 <semantic:content>
                     <!-- Table -->
-                    <Table id="productsTable" inset="false" class="sapFSemanticPageAlignContent" width="auto" noDataText="{i18n>tbNoData}" items="{path: '/Products', parameters: {expand: 'to_cat'}}">
+                    <Table id="usersTable" inset="false" class="sapFSemanticPageAlignContent" width="auto" noDataText="{i18n>tbNoData}" items="{/Users}">
 
                         <!-- Columns -->
                         <columns>
 
-                            <Column id="logoHeader">
+                            <Column id="logoHeader" width="7em">
                                 <header>
                                     <Text id="text0" text="{i18n>tbLogo}"/>
                                 </header>
                             </Column>
 
-                            <Column id="idHeader">
+                            <Column id="idHeader" width="12em">
                                 <header>
-                                    <Text id="text1" text="{i18n>tbIdProd}"/>
+                                    <Text id="text1" text="{i18n>tbIdUser}"/>
                                 </header>
                             </Column>                            
 
-                            <Column id="nameHeader" width="16em">
+                            <Column id="nameHeader" width="12em">
                                 <header>
                                     <Text id="text2" text="{i18n>tbName}"/>
                                 </header>
                             </Column>     
 
-                            <Column id="categoryHeader" width="10em">
+                            <Column id="emailHeader" width="15em">
                                 <header>
-                                    <Text id="text3" text="{i18n>tbCategory}"/>
+                                    <Text id="text3" text="{i18n>tbEmail}"/>
                                 </header>
                             </Column>    
 
-                            <Column id="supplierIdHeader" width="8em">
+                            <Column id="supplierIdHeader" width="15em">
                                 <header>
-                                    <Text id="text4" text="{i18n>tbSupplyId}"/>
+                                    <Text id="text4" text="{i18n>tbPhone}"/>
                                 </header>
                             </Column>   
-
-                            <Column id="unityHeaderdHeader" hAlign="Center">
-                                <header>
-                                    <Text id="text5" text="{i18n>tbUnity}"/>
-                                </header>
-                            </Column> 
-
-                            <Column id="priceHeader">
-                                <header>
-                                    <Text id="text6" text="{i18n>tbPrice}"/>
-                                </header>
-                            </Column> 
-
-                            <Column id="statusHeader" width="10em">
-                                <header>
-                                    <Text id="text7" text="{i18n>tbStatus}"/>
-                                </header>
-                            </Column> 
-
-                            <Column id="createDateHeadersHeader">
-                                <header>
-                                    <Text id="text8" text="{i18n>tbCreateDate}"/>
-                                </header>
-                            </Column> 
 
                         </columns>
 
                         <!-- Items -->
                         <items>
-                            <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onSelectedItem">
+                            <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onSelectedUser">
                                 <cells>
                                     <sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://product" size="3em" id="icon0"/>
-                                    <Text xmlns="sap.m" text="{Productid}" id="productIdView"/>
-                                    <ObjectIdentifier xmlns="sap.m" text="{Description}" id="productDescName" title="{Name}"/>
-                                    <Text xmlns="sap.m" id="text18" text="{to_cat/Description}"/>
-                                    <Text xmlns="sap.m" id="text19" text="{Supplierid}"/>
-                                    <Text xmlns="sap.m" text="{Measureunit}" id="text20"/>
-
-                                    <ObjectNumber xmlns="sap.m" unit="{Currencycode}" id="number0" number="{ parts:[{path:'Price'}, {path:'Currencycode'}], type:'sap.ui.model.type.Currency', formatOptions: {showMeasure: false}}" state="Information"/>
-
-                                    <ObjectStatus xmlns="sap.m" text="{ path:'Status', formatter: '.objFormat.productStatus'}" id="statusProd" state="{ path:'Status', formatter: '.objFormat.changeStatus'}" icon="{ path:'Status', formatter: '.objFormat.changeIcon'}"/>
-
-                                    <Text xmlns="sap.m" text="{ path:'Createdat', formatter: '.objFormat.dateFormat'}" id="text23"/>
+                                    <Text xmlns="sap.m" text="{Userid}" id="userId"/>
+                                    <Text xmlns="sap.m" text="{Firstname} {Lastname}" id="idName"/>
+                                    <Text xmlns="sap.m" text="{Email}" id="userEmail"/>
+                                    <Text xmlns="sap.m" text="{Fone}" id="phone"/>
                                 </cells>
                             </ColumnListItem>
                         </items>

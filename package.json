@@ -1,8 +1,8 @@
 {
-  "name": "fiori_app_report_354",
+  "name": "fiori_app_users_354",
   "version": "0.0.1",
   "private": true,
-  "description": "Fiori App Gestão Report",
+  "description": "Fiori App Gestão de Usuários",
   "keywords": [
     "ui5",
     "openui5",

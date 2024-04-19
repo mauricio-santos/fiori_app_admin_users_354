@@ -9,7 +9,7 @@ sap.ui.define([
     function (Controller) {
         "use strict";
 
-        return Controller.extend("br.com.gestao.sapfioriappadmin354.controller.DataBinding", {
+        return Controller.extend("br.com.gestao.sapfioriappusers354.controller.DataBinding", {
             onInit: function () {
                 
                 //CRIANDO OBJETO JSONMODEL

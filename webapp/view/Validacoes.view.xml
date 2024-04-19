@@ -1,4 +1,4 @@
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="br.com.gestao.sapfioriappadmin354.controller.Validacoes" displayBlock="true">
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="br.com.gestao.sapfioriappusers354.controller.Validacoes" displayBlock="true">
     <App id="_IDGenApp1">
         <pages>
             <Page xmlns="sap.m" id="pageId" title="Validações" floatingFooter="true">

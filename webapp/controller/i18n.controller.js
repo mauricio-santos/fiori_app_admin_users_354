@@ -11,7 +11,7 @@ sap.ui.define([
     function (Controller, MessageBox, MessageToast) {
         "use strict";
 
-        return Controller.extend("br.com.gestao.sapfioriappadmin354.controller.i18n", {
+        return Controller.extend("br.com.gestao.sapfioriappusers354.controller.i18n", {
             onInit: function () {
                 // alert("Hello!!");
                 // MessageBox.confirm("message");
@@ -38,7 +38,7 @@ sap.ui.define([
                 var i18nModel = new sap.ui.model.resource.ResourceModel({
                     bundleUrl: "i18n/i18n.properties",
                     bundleLocale: locale,
-                    bundleName: "br.com.gestao.sapfioriappadmin354.i18n.i18n_" + choiseLanguage
+                    bundleName: "br.com.gestao.sapfioriappusers354.i18n.i18n_" + choiseLanguage
                 });
 
                 this.getView().setModel(i18nModel, "i18n") //Substinui o i18n padrão

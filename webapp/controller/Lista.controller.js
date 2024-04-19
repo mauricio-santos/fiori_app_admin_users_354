@@ -2,11 +2,11 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "br/com/gestao/sapfioriappadmin354/util/Formatter",
+    "br/com/gestao/sapfioriappusers354/util/Formatter",
     "sap/ui/core/Fragment",
     "sap/ui/core/ValueState",
     "sap/ui/model/json/JSONModel",
-    "br/com/gestao/sapfioriappadmin354/util/Validator",
+    "br/com/gestao/sapfioriappusers354/util/Validator",
     "sap/m/MessageBox",
     "sap/m/BusyDialog",
     "sap/ui/model/odata/ODataModel",
@@ -18,7 +18,7 @@ sap.ui.define([
     function (Controller, Filter, FilterOperator, Formatter, Fragment, ValueState, JSONModel, Validator, MessageBox, BusyDialog, ODataModel, MessageToast) {
         "use strict";
 
-        return Controller.extend("br.com.gestao.sapfioriappadmin354.controller.Lista", {
+        return Controller.extend("br.com.gestao.sapfioriappusers354.controller.Lista", {
 
             //Usando funções do arquivo Formatter.js
             objFormat: Formatter,
@@ -41,35 +41,32 @@ sap.ui.define([
             createModel: function(){
                 //Model Produto
                 let oModel = new JSONModel();
-                this.getView().setModel(oModel, "MDL_Produto");
+                this.getView().setModel(oModel, "MDL_User");
             },
 
             onSearch: function(event){
-                //debugger;
 
                 //Capturando os inputs do filterbar
-                let oProductId = this.byId("productIdInput").getValue();
-                let oProductName = this.byId("productNameInput").getValue();
-                let oCategory = this.byId("productCategory").getValue();
+                let oUserId = this.byId("userIdInput").getValue();
+                let oUserFirstName = this.byId("userNameInput").getValue();
+                let oUserEmail = this.byId("emailInput").getValue();
 
                 let objFilter = {filters: [], and: true};
-                objFilter.filters.push(new Filter("Productid", FilterOperator.Contains, oProductId));
-                objFilter.filters.push(new Filter("Name", FilterOperator.Contains, oProductName));
-                objFilter.filters.push(new Filter("Category", FilterOperator.Contains, oCategory));
+                if(oUserId){
+                    objFilter.filters.push(new Filter("Userid", FilterOperator.EQ, oUserId));
+                }
+
+                if(oUserFirstName){
+                    objFilter.filters.push(new Filter("Firstname", FilterOperator.Contains, oUserFirstName));
+                }
+
+                if(oUserEmail){
+                    objFilter.filters.push(new Filter("Email", FilterOperator.Contains, oUserEmail));
+                }
 
                 let oFilter = new Filter(objFilter);
 
-                // //Implementando objeto filter baseado no valor buscado
-                // let oFilter = new Filter({
-                //     filters: [
-                //         new Filter("Productid", FilterOperator.Contains, oProductId),
-                //         new Filter("Name", FilterOperator.Contains, oProductName),
-                //         new Filter("Category", FilterOperator.Contains, oCategory)
-                //     ],
-                //     and: true
-                // });
-
-                let oTable = this.byId("productsTable");
+                let oTable = this.byId("usersTable");
                 let binding = oTable.getBinding("items");
                 binding.filter(oFilter);
             },
@@ -82,16 +79,16 @@ sap.ui.define([
             },
 
             // ########### CRIANDO ROTAS ASSOCIADAS A ÍTENS DA LISTA ###########
-            onSelectedItem: function(event){
+            onSelectedUser: function(event){
                 // debugger;
 
                 // Capturando id do objeto no evento
-                let oProductId = event.getSource().getBindingContext().getProperty("Productid");
+                let oUserId = event.getSource().getBindingContext().getProperty("Userid");
                 
                 // Redirecionando para detalhes com o parâmetro
                 let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 oRouter.navTo("RouteDetalhes", {
-                    productId: oProductId
+                    userId: oUserId
                 });          
             },
 
@@ -113,7 +110,7 @@ sap.ui.define([
                     this._CategorySearchHelp = Fragment.load({
                         id: oView.getId(),
                         //Namespace do fragmento
-                        name: "br.com.gestao.sapfioriappadmin354.frags.SH_Categories",
+                        name: "br.com.gestao.sapfioriappusers354.frags.SH_Categories",
                         controller: this
                     }).then(function(oDialog){
                         //oDialog corresponde ao fragment (_CategorySearchHelp) recém criado
@@ -174,31 +171,31 @@ sap.ui.define([
             },
 
             // ########### CRUD ###########
-            onCreateProduct: function(event){
+            onCreateUser: function(event){
                 debugger;
                 //capturando a view
 
-                //cria o model MDL_Produto vazio
+                //cria o model MDL_User vazio
                 this.createModel();
 
                 let oView = this.getView();
 
                 let t = this;
 
-                if(!this._Product){
+                if(!this._User){
                     //Carregamento do fragmento
-                    this._Product = Fragment.load({
+                    this._User = Fragment.load({
                         id: oView.getId(),
-                        name: "br.com.gestao.sapfioriappadmin354.frags.CreateProduct",
+                        name: "br.com.gestao.sapfioriappusers354.frags.CreateUser",
                         controller: this
                     }).then(function(oDialog){
-                        //oDialog corresponde ao fragment (_Product) recém criado
+                        //oDialog corresponde ao fragment (_User) recém criado
                         oView.addDependent(oDialog);
                         return oDialog;
                     });
                 }
 
-                this._Product.then(function(oDialog){
+                this._User.then(function(oDialog){
                     oDialog.open();
 
                     //Chamada da função para pegar os usuários
@@ -208,7 +205,7 @@ sap.ui.define([
 
                 });
             },
-            validation: function(){
+            onValidation: function(){
                 //Criação do objeto validator
                 let validator = new Validator(); //A validação acontece nas CONSTRAINTS
 
@@ -223,26 +220,25 @@ sap.ui.define([
             onInsert: function(){
                 debugger
                 //Capturando o modelo
-                let oModelProduct = this.getView().getModel("MDL_Produto");
+                let oModelProduct = this.getView().getModel("MDL_User");
 
                 //Capturando o objeto do modelo de produto
-                let oProductSAP = oModelProduct.getData();
+                let oUserSAP = oModelProduct.getData();
 
-                //Realizando manipulações de dados do produto
-                oProductSAP.Productid = this.getRandomId();
-                oProductSAP.Price = oProductSAP.Price[0].toString();
-                oProductSAP.Createdat = this.objFormat.dateSAP(oProductSAP.Createdat);
-                oProductSAP.Currencycode = "EUR";
-                oProductSAP.Userupdate = "";
-                oProductSAP.Weightmeasure = oProductSAP.Weightmeasure.toString();
-                oProductSAP.Width = oProductSAP.Width.toString();
-                oProductSAP.Height = oProductSAP.Height.toString();
-                oProductSAP.Depth = oProductSAP.Depth.toString();
+                // //Realizando manipulações de dados do produto
+                // oUserSAP.Userid = oUserSAP.Userid;
+                // oUserSAP.Price = oUserSAP.Price[0].toString();
+                // oUserSAP.Createdat = this.objFormat.dateSAP(oUserSAP.Createdat);
+                // oUserSAP.Currencycode = "EUR";
+                // oUserSAP.Userupdate = "";
+                // oUserSAP.Weightmeasure = oUserSAP.Weightmeasure.toString();
+                // oUserSAP.Width = oUserSAP.Width.toString();
+                // oUserSAP.Height = oUserSAP.Height.toString();
+                // oUserSAP.Depth = oUserSAP.Depth.toString();
 
                 //Criando uma referência do arquivo i18n
                 let bundle = this.getView().getModel("i18n").getResourceBundle(); //possue todas as chaves do arquivo i18n
-                let 
-                successMsg = bundle.getText("insertDialogSuccess", [oProductSAP.Productid]);
+                let successMsg = bundle.getText("insertDialogSuccess", [oUserSAP.Userid]);
                
                 //letiável de contexto da view
                 let t = this;
@@ -276,8 +272,8 @@ sap.ui.define([
 
                                     //Criar produto a partir do objeto
                                     oModelSend.create(
-                                        "Products", //Nome da entidade
-                                        oProductSAP, //Objeto com os dados para inclusão
+                                        "Users", //Nome da entidade
+                                        oUserSAP, //Objeto com os dados para inclusão
                                         null, //Parâmetros de credênciais
 
                                         //Função de retorno de SUCESSO
@@ -342,9 +338,9 @@ sap.ui.define([
                 });
             },
 
-            // Fechamento do dialogo do fragment do CreateProduct
+            // Fechamento do dialogo do fragment do CreateUser
             dialogClose: function(){
-                this._Product.then(function(oDialog){
+                this._User.then(function(oDialog){
                     oDialog.close();
 
                 });
@@ -395,7 +391,7 @@ sap.ui.define([
                 let oModel = this.getView().getModel();
 
                 //Model onde o usuário realiza o preenchimento das informações de produtos
-                let oModelMDLProduct = this.getView().getModel("MDL_Produto");
+                let oModelMDLProduct = this.getView().getModel("MDL_User");
 
                 //Realizar a chamada para o SAP
                 let oModelSend = new ODataModel(oModel.sServiceUrl, true);
